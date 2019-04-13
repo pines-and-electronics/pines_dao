@@ -1,4 +1,4 @@
-# PINES AND ELECTRONICS - DAO
+# PINES AND ELECTRONICS - Frontend - DAO
 
 
 ## Checklist before running
