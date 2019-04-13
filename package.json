@@ -1,0 +1,24 @@
+{
+  "name": "pines_dao3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "truffle-hdwallet-provider": "^1.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pines-and-electronics/pines_dao.git"
+  },
+  "author": "Daniel Montano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pines-and-electronics/pines_dao/issues"
+  },
+  "homepage": "https://github.com/pines-and-electronics/pines_dao#readme"
+}
