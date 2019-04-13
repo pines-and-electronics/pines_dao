@@ -15,7 +15,10 @@
     "type": "git",
     "url": "git+https://github.com/pines-and-electronics/pines_dao.git"
   },
-  "author": "Daniel Montano",
+  "authors":[
+    "Daniel Montano <danimc28@gmail.com> (https://github.com/supdann)",
+    "Paul  <paulseidler1@gmail.com.com> (https://github.com/plsdlr)"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pines-and-electronics/pines_dao/issues"

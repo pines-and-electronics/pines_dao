@@ -21,6 +21,10 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "authors":[
+    "Daniel Montano <danimc28@gmail.com> (https://github.com/supdann)",
+    "Paul  <paulseidler1@gmail.com.com> (https://github.com/plsdlr)"
+  ],
   "browserslist": [
     ">0.2%",
     "not dead",
