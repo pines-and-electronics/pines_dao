@@ -1,5 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import axios from 'axios'
 
 var styles = {
 	button: {
@@ -28,8 +29,8 @@ class StatusBox extends React.Component {
 	}
 
 	handleRegisterButtonPressed(){
-		console.log("button pressed")
-		this.props.sendCommand("register")
+		console.log("register button pressed")
+		this.props.handleRegisterButtonPressed()
 	}
 
 	render() {

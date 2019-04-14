@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import CarControllerContract from "./contracts/CarController.json"
 import getWeb3 from "./utils/getWeb3"
+import axios from 'axios'
 
 import "./App.css";
 
@@ -27,11 +28,32 @@ class App extends Component {
 
 		this.sendCommand = this.sendCommand.bind(this)
 		this.handleDialogClose = this.handleDialogClose.bind(this)
-
+		this.handleRegisterButtonPressed = this.handleRegisterButtonPressed.bind(this)
 	}
 
 	handleDialogClose() {
 		this.setState({ dialogOpen: false })
+	}
+
+	async handleRegisterButtonPressed() {
+		try {
+			const response = await axios.get('http://172.16.165.63:8080/api/register')
+			console.log('response: '+response.data)
+			this.setState({ dialogOpen: true, classification: response})
+		} catch (e) {
+			console.log(e)
+		}
+	}
+
+	async sendCommand(command) {
+		const { accounts, contract } = this.state;
+
+		try {
+			const txHash = await contract.methods.sendCommand(command).send({ from: accounts[0] })
+			console.log(JSON.stringify(txHash))
+		} catch (e) {
+			console.log(e)
+		}
 	}
 
 	componentDidMount = async () => {
@@ -62,21 +84,6 @@ class App extends Component {
 		}
 	};
 
-	async sendCommand(command) {
-		const { accounts, contract } = this.state;
-
-		try {
-			const txHash = await contract.methods.sendCommand(command).send({ from: accounts[0] })
-			console.log(JSON.stringify(txHash))
-
-			if(command === 'register'){
-				this.setState({dialogOpen:true})
-			}
-		} catch (e) {
-			console.log(e)
-		}
-	}
-
 	render() {
 		if (!this.state.web3) {
 			return <div>Loading Web3, accounts, and contract...</div>;
@@ -88,7 +95,10 @@ class App extends Component {
 					open={this.state.dialogOpen}
 					handleDialogClose={this.handleDialogClose}
 				/>
-				<StatusBox sendCommand={this.sendCommand} />
+				<StatusBox
+					sendCommand={this.sendCommand}
+					handleRegisterButtonPressed={this.handleRegisterButtonPressed}
+				/>
 				<CameraController sendCommand={this.sendCommand} />
 				<Joystick sendCommand={this.sendCommand} />
 				<Display />
