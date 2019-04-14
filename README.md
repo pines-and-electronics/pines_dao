@@ -1,7 +1,7 @@
 # PINES AND ELECTRONICS - Frontend - DAO
 
 
-## Checklist before running
+### Checklist before running
 
 - cd into the repo and do npm install
 - create an .env file inside of the repo folder. It should have the following variables:
@@ -11,7 +11,7 @@ MNEMONIC="mnemonic" # Make sure you have some eth
 ```
 - cd into the client folder and run npm install as well.
 
-## Compile and migrate
+### Compile and migrate
 
 cd into the main repo folder and run the following commands to deploy the contract to the rinkeby network.
 
