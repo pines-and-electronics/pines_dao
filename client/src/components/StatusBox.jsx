@@ -3,14 +3,16 @@ import { withStyles } from '@material-ui/core/styles'
 
 var styles = {
 	button: {
+		// marginTop: "15px",
 		width: "100%",
-		backgroundColor: "cyan",
+		backgroundColor: "#6CB980",
 		borderRadius: "8px",
 		height: "40px",
 		display: "flex",
 		alignItems: "center",
 		textAlign: "center",
 		alignContent: "center",
+		color: '#FFF',
 		'&:hover': {
 			cursor: "pointer",
 			backgroundColor: '#4E77C9'
@@ -25,6 +27,11 @@ class StatusBox extends React.Component {
     	this.props.sendCommand("snap")
 	}
 
+	handleRegisterButtonPressed(){
+		console.log("button pressed")
+		this.props.sendCommand("register")
+	}
+
 	render() {
 
 		const { classes } = this.props
@@ -32,32 +39,34 @@ class StatusBox extends React.Component {
 		return <div style={{
 			position: "absolute ",
 			width: "150px",
-			height: "170px",
+			display: "flex",
+			flexDirection: "column",
 			top: "30px",
 			right: "30px",
 			zIndex: "100",
-			backgroundColor: "white",
+			backgroundColor: "rgba(255, 255, 255, 0.9)",
 			borderRadius: "15px",
-			opacity: "0.8",
 			color: "#555",
 			padding: "15px"
 		}}>
-			<h3>Status</h3>
-			<p>
-				Position:
-			</p>
-			<p>
-				Time: 1555164083
-			</p>
+			{/* <h3>Status</h3>
+			<p> Position: </p>
+			<p> Time: 1555164083 </p> */}
 			<div
 				className={classes.button}
 				onClick={() => this.handleSnapshotButtonPressed()}
 			>
-				<div style={{
-					width: "100%",
-					display: "block",
-				}}
+				<div style={{ width: "100%", display: "block" }}
 				>Take Snapshot</div>
+			</div>
+
+			<div
+				className={classes.button}
+				style={{marginTop: "15px"}}
+				onClick={() => this.handleRegisterButtonPressed()}
+			>
+				<div style={{ width: "100%", display: "block" }}
+				>Register</div>
 			</div>
 		</div>
 	}

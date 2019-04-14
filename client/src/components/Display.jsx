@@ -8,7 +8,10 @@ var styles = {
 		position:'relative',
 		width:'100%',
 		height:'100%',
-		backgroundImage: `url(${backgroundImg})`
+		backgroundImage: `url(${backgroundImg})`,
+		backgroundPosition: 'center center',
+		backgroundSize: 'cover',
+		backgroundRepeat: 'no-repeat'
 	}
 }
 
