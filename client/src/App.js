@@ -69,9 +69,9 @@ class App extends Component {
 			const txHash = await contract.methods.sendCommand(command).send({ from: accounts[0] })
 			console.log(JSON.stringify(txHash))
 
-			if(command === 'register'){
-				this.setState({dialogOpen:true})
-			}
+			// if(command === 'register'){
+			// 	this.setState({dialogOpen:true})
+			// }
 		} catch (e) {
 			console.log(e)
 		}
